@@ -3,13 +3,12 @@ package br.com.wippel.validator;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.temporal.Temporal;
 
 /**
  * Operations on {@link LocalDate} and {@link LocalDateTime} to verify date/time
  * overlapping.
  * 
- * @author Marcelo Wippel
+ * @author Marcelo Wippel (https://github.com/mawippel)
  */
 public final class OverlappingVerificator {
 
@@ -19,26 +18,50 @@ public final class OverlappingVerificator {
 	private OverlappingVerificator() {
 	}
 
+	/**
+	 * Compares the two periods of {@link LocalDate} and search for overlaps
+	 * 
+	 * If there's an overlap, returns <code>true</code>, otherwise, returns
+	 * <code>false</code>
+	 * 
+	 * @param comparableInit - The Initial comparator date
+	 * @param comparableEnd  - The End comparator date
+	 * @param toCompareInit  - The Initial date to compare to
+	 * @param toCompareEnd   - The End date to compare to
+	 * @return a <code>boolean</code>
+	 */
 	public static boolean isOverlapping(LocalDate comparableInit, LocalDate comparableEnd, LocalDate toCompareInit,
 			LocalDate toCompareEnd) {
-		if (areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
+		if (OverlappingDateUtils.areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			return false;
 		}
-		// Verifies if some end date is before the initial date
-		if (comparableEnd.compareTo(comparableInit) == -1 || toCompareEnd.compareTo(toCompareInit) == -1) {
+
+		if (OverlappingDateUtils.isEndBeforeInit(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			throw new DateTimeException("End date is before the initial date");
 		}
 
 		return hasOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 	}
 
+	/**
+	 * Compares the two periods of {@link LocalDateTime} and search for overlaps
+	 * 
+	 * If there's an overlap, returns <code>true</code>, otherwise, returns
+	 * <code>false</code>
+	 * 
+	 * @param comparableInit - The Initial comparator date
+	 * @param comparableEnd  - The End comparator date
+	 * @param toCompareInit  - The Initial date to compare to
+	 * @param toCompareEnd   - The End date to compare to
+	 * @return a <code>boolean</code>
+	 */
 	public static boolean isOverlapping(LocalDateTime comparableInit, LocalDateTime comparableEnd,
 			LocalDateTime toCompareInit, LocalDateTime toCompareEnd) {
-		if (areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
+		if (OverlappingDateUtils.areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			return false;
 		}
-		// Verifies if some end date is before the initial date
-		if (comparableEnd.compareTo(comparableInit) == -1 || toCompareEnd.compareTo(toCompareInit) == -1) {
+
+		if (OverlappingDateUtils.isEndBeforeInit(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			throw new DateTimeException("End date is before the initial date");
 		}
 
@@ -70,8 +93,8 @@ public final class OverlappingVerificator {
 	}
 
 	/**
-	 * Method that transforms the {@link LocalDate} to a {@link LocalDateTime}
-	 * to verify the overlapping
+	 * Method that transforms the {@link LocalDate} to a {@link LocalDateTime} to
+	 * verify the overlapping
 	 * 
 	 * @param comparableInit a {@link LocalDateTime}
 	 * @param comparableEnd  a {@link LocalDateTime}
@@ -81,26 +104,11 @@ public final class OverlappingVerificator {
 	 */
 	private static boolean hasOverlap(LocalDate comparableInit, LocalDate comparableEnd, LocalDate toCompareInit,
 			LocalDate toCompareEnd) {
-		return hasOverlap(comparableInit.atStartOfDay(), comparableEnd.atStartOfDay(), toCompareInit.atStartOfDay(),
-				toCompareEnd.atStartOfDay());
-	}
-
-	/**
-	 * Validate if the {@link Temporal}s are valid
-	 * 
-	 * @param date1 a {@link Temporal} representing one date
-	 * @param date2 a {@link Temporal} representing one date
-	 * @param date3 a {@link Temporal} representing one date
-	 * @param date4 a {@link Temporal} representing one date
-	 * 
-	 * @return <code>true</code> if the dates are valid, otherwise, return
-	 *         <code>false</code>
-	 */
-	private static boolean areInvalidDates(Temporal date1, Temporal date2, Temporal date3, Temporal date4) {
-		if (date1 == null || date2 == null || date3 == null || date4 == null) {
+		if (!(comparableEnd.isBefore(toCompareInit) || comparableInit.isAfter(toCompareEnd))) {
 			return true;
+		} else {
+			return false;
 		}
-		return false;
 	}
 
 }
