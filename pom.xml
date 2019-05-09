@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.wippel</groupId>
 	<artifactId>overlapping-date-ranges</artifactId>
-	<version>0.0.1</version>
+	<version>1.0</version>
 	<name>Overlapping Date Ranges</name>
 	<description>Library to help centralize and help people dealing with overlapping date ranges verifications.</description>
 

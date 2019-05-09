@@ -7,7 +7,7 @@ import java.time.temporal.Temporal;
 /**
  * Utils class for validation/comparing {@link LocalDate} and {@link LocalDateTime}
  * 
- * @author Marcelo Wippel (https://github.com/mawippel)
+ * @author Marcelo Wippel (<a href='https://github.com/mawippel'>https://github.com/mawippel</a>)
  */
 public class OverlappingDateUtils {
 
