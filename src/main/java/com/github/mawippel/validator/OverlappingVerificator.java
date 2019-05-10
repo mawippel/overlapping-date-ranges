@@ -8,8 +8,6 @@ import java.time.LocalDateTime;
  * Operations on {@link LocalDate} and {@link LocalDateTime} to verify date/time
  * overlapping.
  * 
- * @see https://github.com/mawippel/overlapping-date-ranges
- * 
  * @author Marcelo Wippel (<a href='https://github.com/mawippel'>https://github.com/mawippel</a>)
  */
 public final class OverlappingVerificator {
