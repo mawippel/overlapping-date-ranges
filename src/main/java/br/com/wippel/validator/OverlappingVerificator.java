@@ -74,8 +74,6 @@ public final class OverlappingVerificator {
 	 * Verifies if the dates are overlapping. Private method that receives 4
 	 * {@link LocalDateTime} and perform the verification.
 	 * 
-	 * @see OverlappingVerificator#isOverlapping(LocalDate, LocalDate, LocalDate,
-	 *      LocalDate)
 	 * @see OverlappingVerificator#isOverlapping(LocalDateTime, LocalDateTime,
 	 *      LocalDateTime, LocalDateTime)
 	 * 
@@ -95,8 +93,11 @@ public final class OverlappingVerificator {
 	}
 
 	/**
-	 * Method that transforms the {@link LocalDate} to a {@link LocalDateTime} to
-	 * verify the overlapping
+	 * Verifies if the dates are overlapping. Private method that receives 4
+	 * {@link LocalDateTime} and perform the verification.
+	 * 
+	 * @see OverlappingVerificator#isOverlapping(LocalDate, LocalDate, LocalDate,
+	 *      LocalDate)
 	 * 
 	 * @param comparableInit a {@link LocalDateTime}
 	 * @param comparableEnd  a {@link LocalDateTime}
