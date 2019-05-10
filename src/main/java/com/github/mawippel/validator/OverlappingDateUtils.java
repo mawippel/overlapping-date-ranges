@@ -1,4 +1,4 @@
-package br.com.wippel.validator;
+package com.github.mawippel.validator;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

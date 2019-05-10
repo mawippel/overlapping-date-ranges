@@ -8,6 +8,8 @@ import java.time.LocalTime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import com.github.mawippel.validator.OverlappingVerificator;
+
 public class LocalDateTimeOverlappingVerificatorTest {
 	
 	private LocalDate date = LocalDate.of(2019, 05, 05);
