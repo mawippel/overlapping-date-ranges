@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.mawippel</groupId>
 	<artifactId>overlapping-date-ranges</artifactId>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<name>Overlapping Date Ranges</name>
 	<description>Library to help centralize and help people dealing with overlapping date ranges verifications.</description>
 	<url>https://github.com/mawippel/overlapping-date-ranges</url>
@@ -33,7 +33,7 @@
 		<developerConnection>
             scm:git:ssh://git@github.com/mawippel/overlapping-date-ranges.git
         </developerConnection>
-	  <tag>overlapping-date-ranges-1.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<developers>
