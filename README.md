@@ -24,7 +24,7 @@ To add a dependency using Gradle:
 
 ```gradle
 dependencies {
-  compile 'com.github.mawippel:overlapping-date-ranges:1.0.4'
+  implementation 'com.github.mawippel:overlapping-date-ranges:1.0.4'
 }
 ```
 
