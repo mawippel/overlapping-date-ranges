@@ -39,7 +39,7 @@ LocalDate comparableEnd = LocalDate.of(2019, 05, 05);
 LocalDate toCompareInit = LocalDate.of(2019, 05, 03);
 LocalDate toCompareEnd = LocalDate.of(2019, 05, 10);
 
-boolean isOverlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+boolean isOverlap = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 ```
 
 ### Using LocalDateTime
@@ -51,7 +51,7 @@ LocalDateTime comparableEnd = LocalDateTime.of(2019, 05, 05, 10, 15);
 LocalDateTime toCompareInit = LocalDateTime.of(2019, 05, 05, 10, 00);
 LocalDateTime toCompareEnd = LocalDateTime.of(2019, 05, 05, 11, 00);
 
-boolean isOverlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+boolean isOverlap = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 ```
 
 ### Exceptions
@@ -63,7 +63,7 @@ LocalDate comparableInit = LocalDate.of(2019, 05, 02);
 LocalDate comparableEnd = LocalDate.of(2019, 05, 03);
 LocalDate toCompareInit = LocalDate.of(2019, 05, 05);
 LocalDate toCompareEnd = LocalDate.of(2019, 05, 04);
-OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 ```
 
 The behavior for the ```LocalDateTime```'s method is the same.
