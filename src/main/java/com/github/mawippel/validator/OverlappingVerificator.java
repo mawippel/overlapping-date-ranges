@@ -6,9 +6,10 @@ import java.time.LocalDateTime;
 
 /**
  * Operations on {@link LocalDate} and {@link LocalDateTime} to verify date/time
- * overlapping.
+ * overlaps.
  * 
- * @author Marcelo Wippel (<a href='https://github.com/mawippel'>https://github.com/mawippel</a>)
+ * @author Marcelo Wippel (<a href=
+ *         'https://github.com/mawippel'>https://github.com/mawippel</a>)
  */
 public final class OverlappingVerificator {
 
@@ -19,7 +20,7 @@ public final class OverlappingVerificator {
 	}
 
 	/**
-	 * Compares the two periods of {@link LocalDate} and search for overlaps
+	 * Compares two periods of {@link LocalDate}, searching for overlaps.
 	 * 
 	 * If there's an overlap, returns <code>true</code>, otherwise, returns
 	 * <code>false</code>
@@ -30,7 +31,7 @@ public final class OverlappingVerificator {
 	 * @param toCompareEnd   - The End date to compare to
 	 * @return a <code>boolean</code>
 	 */
-	public static boolean isOverlapping(LocalDate comparableInit, LocalDate comparableEnd, LocalDate toCompareInit,
+	public static boolean isOverlap(LocalDate comparableInit, LocalDate comparableEnd, LocalDate toCompareInit,
 			LocalDate toCompareEnd) {
 		if (OverlappingDateUtils.areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			return false;
@@ -44,7 +45,7 @@ public final class OverlappingVerificator {
 	}
 
 	/**
-	 * Compares the two periods of {@link LocalDateTime} and search for overlaps
+	 * Compares two periods of {@link LocalDateTime}, searching for overlaps.
 	 * 
 	 * If there's an overlap, returns <code>true</code>, otherwise, returns
 	 * <code>false</code>
@@ -55,7 +56,7 @@ public final class OverlappingVerificator {
 	 * @param toCompareEnd   - The End date to compare to
 	 * @return a <code>boolean</code>
 	 */
-	public static boolean isOverlapping(LocalDateTime comparableInit, LocalDateTime comparableEnd,
+	public static boolean isOverlap(LocalDateTime comparableInit, LocalDateTime comparableEnd,
 			LocalDateTime toCompareInit, LocalDateTime toCompareEnd) {
 		if (OverlappingDateUtils.areInvalidDates(comparableInit, comparableEnd, toCompareInit, toCompareEnd)) {
 			return false;
@@ -69,32 +70,9 @@ public final class OverlappingVerificator {
 	}
 
 	/**
-	 * Verifies if the dates are overlapping. Private method that receives 4
-	 * {@link LocalDateTime} and perform the verification.
+	 * Verifies if the dates are overlapping.
 	 * 
-	 * @see OverlappingVerificator#isOverlapping(LocalDateTime, LocalDateTime,
-	 *      LocalDateTime, LocalDateTime)
-	 * 
-	 * @param comparableInit a {@link LocalDateTime}
-	 * @param comparableEnd  a {@link LocalDateTime}
-	 * @param toCompareInit  a {@link LocalDateTime}
-	 * @param toCompareEnd   a {@link LocalDateTime}
-	 * @return a <code>boolean</code>
-	 */
-	private static boolean hasOverlap(LocalDateTime comparableInit, LocalDateTime comparableEnd,
-			LocalDateTime toCompareInit, LocalDateTime toCompareEnd) {
-		if (!(comparableEnd.isBefore(toCompareInit) || comparableInit.isAfter(toCompareEnd))) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	/**
-	 * Verifies if the dates are overlapping. Private method that receives 4
-	 * {@link LocalDateTime} and perform the verification.
-	 * 
-	 * @see OverlappingVerificator#isOverlapping(LocalDate, LocalDate, LocalDate,
+	 * @see OverlappingVerificator#isOverlap(LocalDate, LocalDate, LocalDate,
 	 *      LocalDate)
 	 * 
 	 * @param comparableInit a {@link LocalDateTime}
@@ -105,6 +83,27 @@ public final class OverlappingVerificator {
 	 */
 	private static boolean hasOverlap(LocalDate comparableInit, LocalDate comparableEnd, LocalDate toCompareInit,
 			LocalDate toCompareEnd) {
+		if (!(comparableEnd.isBefore(toCompareInit) || comparableInit.isAfter(toCompareEnd))) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	/**
+	 * Verifies if the dates are overlapping.
+	 * 
+	 * @see OverlappingVerificator#isOverlap(LocalDateTime, LocalDateTime,
+	 *      LocalDateTime, LocalDateTime)
+	 * 
+	 * @param comparableInit a {@link LocalDateTime}
+	 * @param comparableEnd  a {@link LocalDateTime}
+	 * @param toCompareInit  a {@link LocalDateTime}
+	 * @param toCompareEnd   a {@link LocalDateTime}
+	 * @return a <code>boolean</code>
+	 */
+	private static boolean hasOverlap(LocalDateTime comparableInit, LocalDateTime comparableEnd,
+			LocalDateTime toCompareInit, LocalDateTime toCompareEnd) {
 		if (!(comparableEnd.isBefore(toCompareInit) || comparableInit.isAfter(toCompareEnd))) {
 			return true;
 		} else {

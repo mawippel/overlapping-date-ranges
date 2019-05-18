@@ -22,7 +22,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareEnd = LocalDate.of(2019, 05, 04);
 		
 		Assertions.assertThrows(DateTimeException.class,
-				() -> OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd));
+				() -> OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd));
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareEnd = initAndEndEquals;
 		
 		Assertions.assertThrows(DateTimeException.class,
-				() -> OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd));
+				() -> OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd));
 	}
 	
 	/**
@@ -50,7 +50,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareInit = LocalDate.of(2019, 05, 05);
 		LocalDate toCompareEnd = null;
 		
-		boolean overlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+		boolean overlapping = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 		Assertions.assertEquals(false, overlapping);
 	}
 	
@@ -64,7 +64,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareInit = LocalDate.of(2019, 05, 05);
 		LocalDate toCompareEnd = LocalDate.of(2019, 05, 06);
 		
-		boolean overlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+		boolean overlapping = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 		Assertions.assertEquals(false, overlapping);
 	}
 	
@@ -78,7 +78,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareInit = LocalDate.of(2019, 05, 05);
 		LocalDate toCompareEnd = LocalDate.of(2019, 05, 06);
 		
-		boolean overlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+		boolean overlapping = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 		Assertions.assertEquals(false, overlapping);
 	}
 	
@@ -92,7 +92,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareInit = LocalDate.of(2019, 05, 03);
 		LocalDate toCompareEnd = LocalDate.of(2019, 05, 10);
 		
-		boolean overlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+		boolean overlapping = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 		Assertions.assertEquals(true, overlapping);
 	}
 	
@@ -106,7 +106,7 @@ public class LocalDateOverlappingVerificatorTest {
 		LocalDate toCompareInit = LocalDate.of(2019, 05, 03);
 		LocalDate toCompareEnd = LocalDate.of(2019, 05, 10);
 		
-		boolean overlapping = OverlappingVerificator.isOverlapping(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
+		boolean overlapping = OverlappingVerificator.isOverlap(comparableInit, comparableEnd, toCompareInit, toCompareEnd);
 		Assertions.assertEquals(true, overlapping);
 	}
 	

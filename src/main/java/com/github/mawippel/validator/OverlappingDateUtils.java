@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.Temporal;
 
 /**
- * Utils class for validation/comparing {@link LocalDate} and {@link LocalDateTime}
+ * Util class for validation/comparing {@link LocalDate} and {@link LocalDateTime}
  * 
  * @author Marcelo Wippel (<a href='https://github.com/mawippel'>https://github.com/mawippel</a>)
  */
