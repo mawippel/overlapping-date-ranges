@@ -56,7 +56,7 @@ boolean isOverlap = OverlappingVerificator.isOverlap(comparableInit, comparableE
 
 ### Exceptions
 
-If some of the passed end dates is before than the initial dates, a ```DateTimeException``` will be thrown, as shown bellow
+If some of the end dates is before of the initial dates, a ```DateTimeException``` will be thrown, as shown bellow
 
 ```
 LocalDate comparableInit = LocalDate.of(2019, 05, 02);
