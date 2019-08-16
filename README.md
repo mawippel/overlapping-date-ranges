@@ -16,7 +16,7 @@ To add a dependency on overlapping-date-ranges using Maven, use the following:
 <dependency>
   <groupId>com.github.mawippel</groupId>
   <artifactId>overlapping-date-ranges</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
 </dependency>
 ```
 
@@ -24,7 +24,7 @@ To add a dependency using Gradle:
 
 ```gradle
 dependencies {
-  implementation 'com.github.mawippel:overlapping-date-ranges:1.0.4'
+  implementation 'com.github.mawippel:overlapping-date-ranges:1.0.5'
 }
 ```
 
